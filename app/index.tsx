@@ -1,15 +1,14 @@
 import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text } from "react-native";
 
 export default function Index() {
   return (
-    <View
-      style={styles.container}
-    >
-      <Text>Edit app/index.tsx to edit this screen.สวัสดี</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      
       <Link href="/page2" style={styles.link}>
         <Text style={styles.linkText}>ไปหน้าที่ 2</Text>
       </Link>
+      
       <Link href="/flexbox/ex01" style={styles.link}>
         <Text style={styles.linkText}>Ex01</Text>
       </Link>
@@ -46,12 +45,40 @@ export default function Index() {
       <Link href="/flexbox/ex12" style={styles.link}>
         <Text style={styles.linkText}>Ex12</Text>
       </Link>
-    </View>
+      <Link href="/test-components" style={styles.link}>
+        <Text style={styles.linkText}>Test Components</Text>
+      </Link>
+      <Link href="/test-greeting" style={styles.link}>
+        <Text style={styles.linkText}>Test Greeting</Text>
+      </Link>
+      <Link href="/travel" style={styles.link}>
+        <Text style={styles.linkText}>Travel</Text>
+      </Link>
+            <Link href="/resort" style={styles.link}>
+        <Text style={styles.linkText}>resort</Text>
+      </Link>
+
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "center", },
-  link: { margin: 10, padding: 10, backgroundColor: "#2196F3", borderRadius: 5, },
-  linkText: { color: "#fff", fontSize: 16, textAlign: "center", },
+  container: {
+    flexGrow: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingVertical: 20,
+  },
+  link: {
+    margin: 10,
+    padding: 10,
+    backgroundColor: "#2196F3",
+    borderRadius: 5,
+    minWidth: 100, 
+  },
+  linkText: {
+    color: "#fff",
+    fontSize: 16,
+    textAlign: "center",
+  },
 });
