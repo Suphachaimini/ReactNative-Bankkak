@@ -4,11 +4,11 @@ import { ScrollView, StyleSheet, Text } from "react-native";
 export default function Index() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      
+
       <Link href="/page2" style={styles.link}>
         <Text style={styles.linkText}>ไปหน้าที่ 2</Text>
       </Link>
-      
+
       <Link href="/flexbox/ex01" style={styles.link}>
         <Text style={styles.linkText}>Ex01</Text>
       </Link>
@@ -54,9 +54,13 @@ export default function Index() {
       <Link href="/travel" style={styles.link}>
         <Text style={styles.linkText}>Travel</Text>
       </Link>
-            <Link href="/resort" style={styles.link}>
+      <Link href="/resort" style={styles.link}>
         <Text style={styles.linkText}>resort</Text>
       </Link>
+      <Link href="/health" style={styles.link}>
+        <Text style={styles.linkText}>Health</Text>
+      </Link>
+
 
     </ScrollView>
   );
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "#2196F3",
     borderRadius: 5,
-    minWidth: 100, 
+    minWidth: 100,
   },
   linkText: {
     color: "#fff",
