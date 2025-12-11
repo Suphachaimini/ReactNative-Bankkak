@@ -1,19 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FlatList, Image, Text, View } from 'react-native';
 
+type EventItem = {
+    id: string;
+    title: string;
+    uri: string;
+    month: string;
+    date: string;
+    datetime: string;
+    place: string;
+}
+
 export default function Event(props: any) {
-  const [events] = useState([
-    { "id": "1", "title": "Truckfighters: Performing", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-1.jpg" , "month" : "DEC", "date" : "30", "datetime" : "Thu, DEC 30, 09.00 am" , "place" : "London" },
-    { "id": "2", "title": "Paris Motor Show", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-2.jpg" , "month" : "DEC", "date" : "31", "datetime" : "Thu, DEC 30, 09.00 am", "place" : "Paris"},
-    { "id": "3", "title": "Bearded Theory Spring", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-3.jpg" , "month" : "JAN", "date" : "01", "datetime" : "Thu, JAN 01, 09.00 am", "place" : "Canada"},
-    { "id": "4", "title": "BBC Music Introducing", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-4.jpg" , "month" : "JAN", "date" : "11", "datetime" : "Thu, JAN 11, 09.00 am", "place" : "USA"},
-    { "id": "5", "title": "Start-Up Meeting 2022", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-5.jpg" , "month" : "JAN", "date" : "21", "datetime" : "Thu, JAN 21, 09.00 am", "place" : "Thailand"}
-  ]);
+  const [events, setEvents] = useState<EventItem[]>([]);
+
+  useEffect(() => {
+    fetch('https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/json/events.json')
+      .then(response => response.json())
+      .then(data => setEvents(data))
+      .catch(error => console.error(error));
+  }, []);
 
   return (
     <View style={props.style}>
-      <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 15 }}>Up Coming Events</Text>
+      <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Up Coming Events</Text>
       <Text style={{ fontSize: 12, color: 'gray', marginBottom: 10 }}>What's the Worst That Could Happen</Text>
+
       <FlatList
         data={events}
         horizontal
