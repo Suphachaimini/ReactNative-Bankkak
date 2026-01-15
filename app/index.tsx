@@ -63,6 +63,18 @@ export default function Index() {
       <Link href="/home" style={styles.link}>
         <Text style={styles.linkText}>Home</Text>
       </Link>
+      <Link href="/chart" style={styles.link}>
+        <Text style={styles.linkText}>Chart</Text>
+      </Link>
+      <Link href="/your-health" style={styles.link}>
+        <Text style={styles.linkText}>Your Health</Text>
+      </Link>
+      <Link href="/todolist" style={styles.link}>
+        <Text style={styles.linkText}>Todo List</Text>
+      </Link>
+      <Link href="/location" style={styles.link}>
+        <Text style={styles.linkText}>Location</Text>
+      </Link>
 
 
     </ScrollView>
