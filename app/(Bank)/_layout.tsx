@@ -5,21 +5,21 @@ export default function TabLayout() {
   return (
     <Tabs>
       <Tabs.Screen
-        name="Charmander"
-        options={{
-          tabBarLabel: "Charmander",
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="fire" color={color} size={size} />
-          ),
-          headerShown: false,
-        }}
-      />
-      <Tabs.Screen
         name="Pikachu"
         options={{
           tabBarLabel: "Pikachu",
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="bolt" color={color} size={size} />
+          ),
+          headerShown: false,
+        }}
+      />
+            <Tabs.Screen
+        name="Charmander"
+        options={{
+          tabBarLabel: "Charmander",
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="fire" color={color} size={size} />
           ),
           headerShown: false,
         }}
