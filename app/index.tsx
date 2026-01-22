@@ -1,5 +1,5 @@
 import { Link } from "expo-router";
-import { ScrollView, StyleSheet, Text } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
@@ -9,42 +9,45 @@ export default function Index() {
         <Text style={styles.linkText}>ไปหน้าที่ 2</Text>
       </Link>
 
-      <Link href="/flexbox/ex01" style={styles.link}>
-        <Text style={styles.linkText}>Ex01</Text>
-      </Link>
-      <Link href="/flexbox/ex02" style={styles.link}>
-        <Text style={styles.linkText}>Ex02</Text>
-      </Link>
-      <Link href="/flexbox/ex03" style={styles.link}>
-        <Text style={styles.linkText}>Ex03</Text>
-      </Link>
-      <Link href="/flexbox/ex04" style={styles.link}>
-        <Text style={styles.linkText}>Ex04</Text>
-      </Link>
-      <Link href="/flexbox/ex05" style={styles.link}>
-        <Text style={styles.linkText}>Ex05</Text>
-      </Link>
-      <Link href="/flexbox/ex06" style={styles.link}>
-        <Text style={styles.linkText}>Ex06</Text>
-      </Link>
-      <Link href="/flexbox/ex07" style={styles.link}>
-        <Text style={styles.linkText}>Ex07</Text>
-      </Link>
-      <Link href="/flexbox/ex08" style={styles.link}>
-        <Text style={styles.linkText}>Ex08</Text>
-      </Link>
-      <Link href="/flexbox/ex09" style={styles.link}>
-        <Text style={styles.linkText}>Ex09</Text>
-      </Link>
-      <Link href="/flexbox/ex10" style={styles.link}>
-        <Text style={styles.linkText}>Ex10</Text>
-      </Link>
-      <Link href="/flexbox/ex11" style={styles.link}>
-        <Text style={styles.linkText}>Ex11</Text>
-      </Link>
-      <Link href="/flexbox/ex12" style={styles.link}>
-        <Text style={styles.linkText}>Ex12</Text>
-      </Link>
+      <View style={styles.gridContainer}>
+        <Link href="/flexbox/ex01" style={styles.gridLink}>
+          <Text style={styles.linkText}>1</Text>
+        </Link>
+        <Link href="/flexbox/ex02" style={styles.gridLink}>
+          <Text style={styles.linkText}>2</Text>
+        </Link>
+        <Link href="/flexbox/ex03" style={styles.gridLink}>
+          <Text style={styles.linkText}>3</Text>
+        </Link>
+        <Link href="/flexbox/ex04" style={styles.gridLink}>
+          <Text style={styles.linkText}>4</Text>
+        </Link>
+        <Link href="/flexbox/ex05" style={styles.gridLink}>
+          <Text style={styles.linkText}>5</Text>
+        </Link>
+        <Link href="/flexbox/ex06" style={styles.gridLink}>
+          <Text style={styles.linkText}>6</Text>
+        </Link>
+        <Link href="/flexbox/ex07" style={styles.gridLink}>
+          <Text style={styles.linkText}>7</Text>
+        </Link>
+        <Link href="/flexbox/ex08" style={styles.gridLink}>
+          <Text style={styles.linkText}>8</Text>
+        </Link>
+        <Link href="/flexbox/ex09" style={styles.gridLink}>
+          <Text style={styles.linkText}>9</Text>
+        </Link>
+        <Link href="/flexbox/ex10" style={styles.gridLink}>
+          <Text style={styles.linkText}>10</Text>
+        </Link>
+        <Link href="/flexbox/ex11" style={styles.gridLink}>
+          <Text style={styles.linkText}>11</Text>
+        </Link>
+        <Link href="/flexbox/ex12" style={styles.gridLink}>
+          <Text style={styles.linkText}>12</Text>
+        </Link>
+      </View>
+
       <Link href="/test-components" style={styles.link}>
         <Text style={styles.linkText}>Test Components</Text>
       </Link>
@@ -75,7 +78,12 @@ export default function Index() {
       <Link href="/location" style={styles.link}>
         <Text style={styles.linkText}>Location</Text>
       </Link>
-
+      <Link href="/ant" style={styles.link}>
+        <Text style={styles.linkText}>heros</Text>
+      </Link>
+      <Link href="/Charmander" style={styles.link}>
+        <Text style={styles.linkText}>Pokemon</Text>
+      </Link>
 
     </ScrollView>
   );
@@ -84,17 +92,41 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    justifyContent: "center",
-    alignItems: "center",
     paddingVertical: 20,
+    alignItems: "center",
+    backgroundColor: "#d9f9b1"
   },
+
   link: {
-    margin: 10,
+    marginVertical: 5,
     padding: 10,
     backgroundColor: "#2196F3",
     borderRadius: 5,
-    minWidth: 100,
+    width: 200,
+    alignItems: 'center',
   },
+
+
+  gridContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    width: '100%',
+    paddingHorizontal: 10,
+    marginVertical: 10,
+  },
+  gridLink: {
+    margin: 5,
+    padding: 15,
+    backgroundColor: "#2196F3",
+    borderRadius: 5,
+    width: 60,
+    height: 60,
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+  },
+
   linkText: {
     color: "#fff",
     fontSize: 16,
